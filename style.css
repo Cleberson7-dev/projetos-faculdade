@@ -1,0 +1,1169 @@
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #172033;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    /* CORES PRINCIPAIS */
+    --azul-principal: #1565c0;
+    --azul-escuro: #0d47a1;
+    --azul-claro: #eaf3ff;
+    --azul-muito-claro: #f5f9ff;
+
+    /* TEXTO */
+    --texto: #172033;
+    --texto-secundario: #526071;
+
+    /* FUNDOS */
+    --branco: #ffffff;
+    --cinza-fundo: #f6f8fb;
+    --cinza-borda: #dce3eb;
+
+    /* ACESSIBILIDADE */
+    --foco: #ff9800;
+
+    /* SOMBRAS */
+    --sombra: 0 8px 25px rgba(13, 71, 161, 0.08);
+    --sombra-forte: 0 15px 40px rgba(13, 71, 161, 0.14);
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE
+========================================================= */
+
+/*
+   O foco fica bastante visível quando o usuário
+   navega utilizando o teclado.
+*/
+
+:focus-visible {
+    outline: 3px solid var(--foco);
+    outline-offset: 3px;
+}
+
+
+/*
+   Classe utilizada para leitores de tela.
+*/
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.header {
+    width: 100%;
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background-color: var(--branco);
+
+    border-bottom: 1px solid var(--cinza-borda);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 25px;
+
+    font-weight: 800;
+
+    color: var(--azul-escuro);
+}
+
+.logo span {
+    color: var(--azul-principal);
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.menu a {
+    color: var(--texto-secundario);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.menu a:hover {
+    color: var(--azul-principal);
+}
+
+
+/* =========================================================
+   BOTÃO LOGIN
+========================================================= */
+
+.botao-login {
+    padding: 10px 22px;
+
+    background-color: var(--azul-principal);
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.botao-login:hover {
+    background-color: var(--azul-escuro);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 620px;
+    padding: 90px 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 40px;
+    background-color: var(--branco);
+
+}
+
+
+.hero-texto {
+    max-width: 650px;
+}
+.hero-botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+/* PEQUENO TÍTULO */
+
+.tag {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--azul-principal);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.hero h1 {
+    color: var(--azul-escuro);
+
+    font-size: clamp(42px, 5vw, 66px);
+
+    line-height: 1.08;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 strong {
+    display: block;
+
+    color: var(--azul-principal);
+}
+
+
+/* TEXTO */
+
+.hero > .hero-texto > p {
+    max-width: 590px;
+
+    color: var(--texto-secundario);
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   BOTÕES DO HERO
+========================================================= */
+
+.hero-botoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.botao-principal {
+    display: inline-block;
+
+    padding: 14px 27px;
+
+    background-color: var(--azul-principal);
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.botao-principal:hover {
+    background-color: var(--azul-escuro);
+
+    transform: translateY(-2px);
+}
+
+
+.botao-secundario {
+    display: inline-block;
+
+    padding: 13px 26px;
+
+    background-color: white;
+
+    color: var(--azul-escuro);
+
+    border: 2px solid var(--azul-principal);
+
+    border-radius: 7px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.botao-secundario:hover {
+    background-color: var(--azul-claro);
+}
+
+
+/* =========================================================
+   CARD DE PROGRESSO
+========================================================= */
+
+.hero-card {
+    width: 340px;
+
+    padding: 35px;
+
+    background-color: white;
+
+    border: 1px solid var(--cinza-borda);
+
+    border-radius: 15px;
+
+    box-shadow: var(--sombra-forte);
+}
+
+
+.icone-estudo {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--azul-claro);
+
+    border-radius: 12px;
+
+    font-size: 28px;
+
+    margin-bottom: 22px;
+}
+
+
+.hero-card h3 {
+    color: var(--azul-escuro);
+
+    margin-bottom: 5px;
+}
+
+
+.hero-card p {
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+/* BARRA DE PROGRESSO */
+
+.progresso {
+    width: 100%;
+    height: 10px;
+
+    background-color: #dce6f2;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.progresso-barra {
+    width: 72%;
+    height: 100%;
+
+    background-color: var(--azul-principal);
+
+    border-radius: 20px;
+}
+
+
+.progresso-texto {
+    display: block;
+
+    margin-top: 10px;
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.secao {
+    padding: 100px 7%;
+}
+
+
+.titulo-secao {
+    max-width: 680px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.titulo-secao > span,
+.desempenho-conteudo > span {
+    color: var(--azul-principal);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.titulo-secao h2 {
+    color: var(--azul-escuro);
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    margin: 10px 0 15px;
+}
+
+
+.titulo-secao p {
+    color: var(--texto-secundario);
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   OBJETIVOS
+========================================================= */
+
+.objetivos {
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.card {
+    background-color: white;
+
+    border: 1px solid var(--cinza-borda);
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    transition: 0.25s ease;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--sombra);
+}
+
+
+.icone {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--azul-claro);
+
+    border-radius: 10px;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.objetivo-card h3 {
+    color: var(--azul-escuro);
+
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+
+.objetivo-card p {
+    color: var(--texto-secundario);
+
+    margin-bottom: 20px;
+}
+
+
+.objetivo-card a,
+.link {
+    color: var(--azul-principal);
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+/*
+   Em vez de depender somente de cores,
+   usamos uma borda para diferenciar o card.
+*/
+
+.destaque {
+    border-top: 4px solid var(--azul-principal);
+}
+
+
+/* =========================================================
+   DISCIPLINAS
+========================================================= */
+
+.disciplinas-secao {
+    background-color: var(--cinza-fundo);
+}
+
+
+.disciplinas {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.disciplina {
+    padding: 25px;
+
+    background-color: white;
+
+    border: 1px solid var(--cinza-borda);
+
+    border-radius: 10px;
+
+    transition: 0.25s ease;
+}
+
+
+.disciplina:hover {
+    background-color: var(--azul-principal);
+
+    border-color: var(--azul-principal);
+
+    color: white;
+
+    transform: translateY(-4px);
+}
+
+
+.disciplina span {
+    font-size: 25px;
+}
+
+
+.disciplina h3 {
+    margin-top: 12px;
+
+    color: var(--azul-escuro);
+
+    font-size: 18px;
+}
+
+
+.disciplina p {
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+}
+
+
+.disciplina:hover h3,
+.disciplina:hover p {
+    color: white;
+}
+
+
+/* =========================================================
+   CONCURSOS
+========================================================= */
+
+.concursos {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.concurso-topo {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+}
+
+
+.status {
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    background-color: var(--azul-claro);
+
+    color: var(--azul-escuro);
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+.concurso h3 {
+    color: var(--azul-escuro);
+
+    font-size: 21px;
+}
+
+
+.concurso > p {
+    color: var(--texto-secundario);
+
+    margin: 5px 0 25px;
+}
+
+
+.concurso-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid var(--cinza-borda);
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   DESEMPENHO
+========================================================= */
+
+.desempenho {
+    margin: 40px 7% 100px;
+
+    padding: 70px;
+
+    background-color: var(--azul-escuro);
+
+    border-radius: 15px;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+
+.desempenho-conteudo {
+    max-width: 600px;
+}
+
+
+.desempenho-conteudo > span {
+    color: #90caf9;
+}
+
+
+.desempenho-conteudo h2 {
+    font-size: 40px;
+
+    line-height: 1.2;
+
+    margin: 10px 0 15px;
+}
+
+
+.desempenho-conteudo p {
+    color: #d6e2ef;
+
+    margin-bottom: 30px;
+}
+
+
+/* ESTATÍSTICAS */
+
+.estatisticas {
+    display: flex;
+
+    gap: 45px;
+}
+
+
+.estatisticas div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.estatisticas strong {
+    color: white;
+
+    font-size: 28px;
+}
+
+
+.estatisticas span {
+    color: #c5d5e5;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SOBRE
+========================================================= */
+
+.sobre {
+    background-color: white;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+.footer {
+    padding: 55px 7% 30px;
+
+    background-color: #082b52;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.footer .logo {
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+
+.footer .logo span {
+    color: #90caf9;
+}
+
+
+.footer > p {
+    color: #c3d4e5;
+
+    font-size: 14px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 25px 0;
+}
+
+
+.footer-links a {
+    color: #d4e0ec;
+
+    font-size: 13px;
+}
+
+
+.footer-links a:hover {
+    color: white;
+}
+
+
+.copyright {
+    padding-top: 25px;
+
+    border-top: 1px solid #285076;
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE PARA DALTONISMO
+========================================================= */
+
+/*
+   IMPORTANTE:
+
+   O site não depende somente da cor para transmitir
+   informações.
+
+   Estados importantes possuem também:
+   - texto
+   - bordas
+   - ícones
+   - formas diferentes
+*/
+
+
+/* Status */
+
+.status::before {
+    content: "●";
+
+    margin-right: 5px;
+
+    font-size: 8px;
+}
+
+
+/* Links */
+
+a {
+    text-underline-offset: 3px;
+}
+
+
+/*
+   Modo de alto contraste.
+
+   Pode ser ativado futuramente através de um botão
+   de acessibilidade adicionando a classe:
+
+   <body class="alto-contraste">
+*/
+
+.alto-contraste {
+    --azul-principal: #0047ab;
+    --azul-escuro: #001f54;
+
+    --texto: #000000;
+    --texto-secundario: #1f2937;
+
+    --cinza-fundo: #ffffff;
+    --cinza-borda: #000000;
+
+    --foco: #ff6600;
+}
+
+
+.alto-contraste .card,
+.alto-contraste .disciplina,
+.alto-contraste .concurso {
+    border: 2px solid #000000;
+}
+
+
+.alto-contraste .menu a,
+.alto-contraste .titulo-secao p,
+.alto-contraste .objetivo-card p,
+.alto-contraste .concurso > p {
+    color: #000000;
+}
+
+
+/* =========================================================
+   REDUÇÃO DE MOVIMENTO
+========================================================= */
+
+/*
+   Respeita a configuração do sistema operacional
+   para pessoas que preferem menos animações.
+*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .menu {
+        display: none;
+    }
+
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 70px;
+    }
+
+
+    .hero-texto {
+        max-width: 700px;
+    }
+
+
+    .hero > .hero-texto > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .hero-botoes {
+        justify-content: center;
+    }
+
+
+    .disciplinas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .concursos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .desempenho {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 50px 30px;
+    }
+
+
+    .desempenho-conteudo {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+
+    .botao-login {
+        padding: 8px 15px;
+    }
+
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+
+    .hero-card {
+        width: 100%;
+    }
+
+
+    .hero-botoes {
+        flex-direction: column;
+    }
+
+
+    .botao-principal,
+    .botao-secundario {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .secao {
+        padding: 70px 5%;
+    }
+
+
+    .titulo-secao h2 {
+        font-size: 30px;
+    }
+
+
+    .objetivos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .disciplinas {
+        grid-template-columns: 1fr;
+    }
+
+
+    .estatisticas {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .desempenho {
+        margin-left: 5%;
+
+        margin-right: 5%;
+    }
+
+
+    .footer-links {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+}
+/* ===== DEPOIMENTOS ===== */
+.depoimentos {
+    --fundo-secao: #eef4ff;   /* azul bem clarinho */
+    --fundo-card: #ffffff;    /* branco */
+    --texto-titulo: #0b2a5b;  /* azul escuro */
+    --texto-normal: #4a5b78;  /* cinza azulado */
+    --cor-destaque: #1e6bff;  /* azul principal */
+
+    background: var(--fundo-secao);
+    padding: 60px 5%;
+}
+
+.depoimentos h2 {
+    color: var(--texto-titulo);
+    font-size: 2rem;
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.3;
+}
+
+.depoimentos-lista {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    scroll-snap-type: x mandatory;
+}
+
+.depoimento-card {
+    flex: 0 0 300px;
+    background: var(--fundo-card);
+    border-radius: 12px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 14px rgba(30, 107, 255, 0.12);
+    border-top: 4px solid var(--cor-destaque);
+    scroll-snap-align: start;
+    transition: transform 0.2s;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-5px);
+}
+
+.depoimento-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--cor-destaque);
+}
+
+.depoimento-card h3 {
+    color: var(--texto-titulo);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.depoimento-card p {
+    color: var(--texto-normal);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
