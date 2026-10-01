@@ -1167,3 +1167,31 @@ a {
     font-size: 0.95rem;
     line-height: 1.5;
 }
+    /* ==========================================
+   REGRAS DE ACESSIBILIDADE E NAVEGAÇÃO
+========================================== */
+
+/* Destaque visual para navegação por teclado (Tab) */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 3px solid #ffcc00 !important;
+    outline-offset: 3px !important;
+}
+
+/* Garante legibilidade e contraste adequado nas fontes */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+}
+
+/* Esconde elementos visualmente sem prejudicar leitores de ecrã */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
